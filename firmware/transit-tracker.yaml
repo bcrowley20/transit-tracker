@@ -17,17 +17,20 @@ esp32:
 
 external_components:
   - source: github://avwuff/ESPHome-HUB75-MatrixDisplayWrapper@4fc1f26500b97a39693cd8af4ba2abb75f83ce0b
-  - source: github://tjhorner/esphome-custom-components@1909519fa93747c232b5dbc41f5ada3c41cc2257
-    components: [ serial_rpc ]
-  - source: github://tjhorner/esphome-transit-tracker@main
-    refresh: 0s
+  - source:
+      type: local
+      path: components
 
 logger:
   level: DEBUG
 
 wifi:
+  ssid: "HV-NET"
+  password: "quicklake713"
+  power_save_mode: "NONE"
   ap:
-    password: "hunter2hunter2"
+    ssid: "Transit Tracker Fallback"
+    password: "quicklake713"
 
 captive_portal:
 
@@ -224,9 +227,9 @@ binary_sensor:
         pullup: true
     filters: &button_filters
       - autorepeat:
-        - delay: 500ms
-          time_off: 300ms
-          time_on: 100ms
+          - delay: 500ms
+            time_off: 300ms
+            time_on: 100ms
     on_press:
       then:
         - script.execute:
@@ -301,7 +304,27 @@ time:
 
 web_server:
 
-transit_tracker:
-  id: tracker
+color:
+  - id: rapidride_red
+    hex: "F50046"
+  - id: "c_FDB71A"
+    hex: "FDB71A"
 
-serial_rpc:
+transit_tracker:
+  id: "tracker"
+  base_url: "wss://tt.horner.tj/"
+  time_display: "arrival"
+  show_units: "long"
+  list_mode: "sequential"
+  stops:
+    - stop_id: "st:1_24440"
+      time_offset: "-1min"
+      routes:
+        - "st:1_100132"
+  styles:
+    - route_id: "st:1_100132"
+      name: "24"
+      color: "c_FDB71A"
+  abbreviations:
+    - from: "Downtown"
+      to: "DwnTn"
