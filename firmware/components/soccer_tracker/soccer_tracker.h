@@ -112,9 +112,9 @@ class SoccerTracker : public Component {
     std::map<std::string, image::Image*> team_logos_;
     std::map<std::string, image::Image*> logo_cache_;  // Cache for team name -> logo lookups
     
-    // Polling interval: 5 minutes normally, 10 seconds in test mode
+    // Polling interval: 5 minutes normally, 1 second in test mode
     #ifdef SOCCER_TEST_MODE
-    static constexpr unsigned long FETCH_INTERVAL = 10000; // 10 seconds (test)
+    static constexpr unsigned long FETCH_INTERVAL = 1000; // 1 second (test)
     #else
     static constexpr unsigned long FETCH_INTERVAL = 300000; // 5 minutes
     #endif

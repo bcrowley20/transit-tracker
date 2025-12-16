@@ -19,7 +19,7 @@ TEAMS = [
     "Houston Dynamo",
     "Inter Miami",
     "Los Angeles FC",
-    "LA Galaxy",
+    "Los Angeles Galaxy",
     "Minnesota United",
     "Nashville SC",
     "New England Revolution",

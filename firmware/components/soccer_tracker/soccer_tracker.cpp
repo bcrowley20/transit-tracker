@@ -13,7 +13,7 @@ namespace soccer_tracker {
 
 static const char *TAG = "soccer_tracker";
 
-// Chunked-transfer decoding that handles multiple chunks
+// Helper function: Chunked-transfer decoding that handles multiple chunks
 static bool dechunk_(const std::string &in, std::string &out) {
   size_t pos = 0;
   out.clear();
@@ -297,7 +297,7 @@ void SoccerTracker::fetch_match_data_() {
   const bool length_known = (response->content_length > 0 && response->content_length < max_length);
 
   // Small delay to ensure response body is ready
-  delay(20);
+  delay(25);
 
   while (response_str.size() < max_length && millis() < read_timeout) {
     // If length is known and we've read enough, stop
@@ -342,29 +342,29 @@ void SoccerTracker::fetch_match_data_() {
   ESP_LOGD(TAG, "Received response (%zu bytes)", response_str.length());
 
   // Debug: log the first part of the payload to diagnose parse errors
-  const size_t preview_len = std::min<size_t>(response_str.size(), 200);
-  std::string preview = response_str.substr(0, preview_len);
+  // const size_t preview_len = std::min<size_t>(response_str.size(), 200);
+  // std::string preview = response_str.substr(0, preview_len);
   // Also log first few bytes in hex to detect gzip/binary responses
-  char hexbuf[200];
-  size_t hex_len = std::min<size_t>(response_str.size(), 32);
-  size_t pos_hex = 0;
-  for (size_t i = 0; i < hex_len && pos_hex + 3 < sizeof(hexbuf); i++) {
-    pos_hex += snprintf(hexbuf + pos_hex, sizeof(hexbuf) - pos_hex, "%02X ", (uint8_t)response_str[i]);
-  }
-  hexbuf[std::min<size_t>(pos_hex, sizeof(hexbuf) - 1)] = '\0';
-  ESP_LOGD(TAG, "Response first bytes (hex): %s", hexbuf);
+  // char hexbuf[200];
+  // size_t hex_len = std::min<size_t>(response_str.size(), 32);
+  // size_t pos_hex = 0;
+  // for (size_t i = 0; i < hex_len && pos_hex + 3 < sizeof(hexbuf); i++) {
+  //   pos_hex += snprintf(hexbuf + pos_hex, sizeof(hexbuf) - pos_hex, "%02X ", (uint8_t)response_str[i]);
+  // }
+  // hexbuf[std::min<size_t>(pos_hex, sizeof(hexbuf) - 1)] = '\0';
+  // ESP_LOGD(TAG, "Response first bytes (hex): %s", hexbuf);
 
   // Also log last bytes to see if we got the terminating chunk
-  if (response_str.size() > 32) {
-    char hexbuf_end[200];
-    size_t hex_end = std::min<size_t>(response_str.size() - 32, 32);
-    size_t pos_hex_end = 0;
-    for (size_t i = response_str.size() - hex_end; i < response_str.size() && pos_hex_end + 3 < sizeof(hexbuf_end); i++) {
-      pos_hex_end += snprintf(hexbuf_end + pos_hex_end, sizeof(hexbuf_end) - pos_hex_end, "%02X ", (uint8_t)response_str[i]);
-    }
-    hexbuf_end[std::min<size_t>(pos_hex_end, sizeof(hexbuf_end) - 1)] = '\0';
-    ESP_LOGD(TAG, "Response last bytes (hex): %s", hexbuf_end);
-  }
+  // if (response_str.size() > 32) {
+  //   char hexbuf_end[200];
+  //   size_t hex_end = std::min<size_t>(response_str.size() - 32, 32);
+  //   size_t pos_hex_end = 0;
+  //   for (size_t i = response_str.size() - hex_end; i < response_str.size() && pos_hex_end + 3 < sizeof(hexbuf_end); i++) {
+  //     pos_hex_end += snprintf(hexbuf_end + pos_hex_end, sizeof(hexbuf_end) - pos_hex_end, "%02X ", (uint8_t)response_str[i]);
+  //   }
+  //   hexbuf_end[std::min<size_t>(pos_hex_end, sizeof(hexbuf_end) - 1)] = '\0';
+  //   ESP_LOGD(TAG, "Response last bytes (hex): %s", hexbuf_end);
+  //  }
 
   // Handle chunked transfer encoding (Content-Length: -1 came through as UINT_MAX)
   if (!response_str.empty() && isxdigit(response_str[0])) {
