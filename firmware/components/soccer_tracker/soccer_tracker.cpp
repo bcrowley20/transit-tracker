@@ -693,15 +693,29 @@ void SoccerTracker::draw_match() {
     ESP_LOGW(TAG, "No display attached");
     return;
   }
+
+  int x = this->display_->get_width() / 2;
+  int y = this->display_->get_height() / 2 - 8;
+  
+  if (!esphome::network::is_connected()) {
+
+    this->display_->printf(x, y, this->font_, Color(255, 255, 255), 
+                          display::TextAlign::CENTER, "Waiting for network");
+    return;
+  }
+
+  if (!this->rtc_->now().is_valid()) {
+    this->display_->printf(x, y, this->font_, Color(255, 255, 255), 
+                          display::TextAlign::CENTER, "Waiting for time sync");
+
+    return;
+  }
   
   if (!this->has_match_data_) {
     // Draw loading indicator with timestamp
     auto now_time = this->rtc_->now();
     unsigned long time_since_fetch = millis() - this->last_fetch_;
-    
-    int x = this->display_->get_width() / 2;
-    int y = this->display_->get_height() / 2 - 8;
-    
+
     this->display_->printf(x, y, this->font_, Color(255, 255, 255), 
                           display::TextAlign::CENTER, "Loading...");
     
@@ -808,12 +822,51 @@ void SoccerTracker::draw_score_(int x, int y, int home_score, int away_score) {
 }
 
 void SoccerTracker::draw_time_in_match_(int x, int y, int minutes, int seconds, bool pulse) {
-  char time_str[16];
-  snprintf(time_str, sizeof(time_str), "%02d%c%02d", 
-           minutes, (pulse && this->colon_visible_ ? ':' : ' '), seconds);
+  // Render minutes, colon, and seconds separately to prevent jumping when colon pulses
+  char minutes_str[8];
+  char seconds_str[8];
+  snprintf(minutes_str, sizeof(minutes_str), "%02d", minutes);
+  snprintf(seconds_str, sizeof(seconds_str), "%02d", seconds);
   
-  this->display_->printf(x, y, this->small_font_, Color(255, 255, 255),
-                        display::TextAlign::TOP_RIGHT, "%s", time_str);
+  // Draw with fixed spacing to prevent jumping
+  // Calculate total width for right alignment
+  std::string full_time = std::string(minutes_str) + ":" + std::string(seconds_str);
+  int total_width = 0;
+  for (size_t i = 0; i < full_time.size(); i++) {
+    char c_str[2] = {full_time[i], '\0'};
+    int w = 0, xo = 0, bl = 0, h = 0;
+    this->small_font_->measure(c_str, &w, &xo, &bl, &h);
+    total_width += w;
+    if (i + 1 < full_time.size()) total_width += 1;  // 1px spacing
+  }
+  
+  int start_x = x - total_width;
+  
+  // Draw minutes with spacing
+  this->draw_text_with_spacing_(start_x, y, this->small_font_, Color(255, 255, 255),
+                                minutes_str, 1, display::TextAlign::TOP_LEFT);
+  
+  // Calculate position after minutes
+  int cursor_x = start_x;
+  for (char c : std::string(minutes_str)) {
+    char c_str[2] = {c, '\0'};
+    int w = 0, xo = 0, bl = 0, h = 0;
+    this->small_font_->measure(c_str, &w, &xo, &bl, &h);
+    cursor_x += w + 1;
+  }
+  
+  // Draw colon (always visible for spacing, but transparent when pulsing off)
+  Color colon_color = (pulse && this->colon_visible_) ? Color(255, 255, 255) : Color(0, 0, 0);
+  this->display_->print(cursor_x, y, this->small_font_, colon_color, display::TextAlign::TOP_LEFT, ":");
+  
+  // Calculate position after colon
+  int w = 0, xo = 0, bl = 0, h = 0;
+  this->small_font_->measure(":", &w, &xo, &bl, &h);
+  cursor_x += w + 1;
+  
+  // Draw seconds with spacing
+  this->draw_text_with_spacing_(cursor_x, y, this->small_font_, Color(255, 255, 255),
+                                seconds_str, 1, display::TextAlign::TOP_LEFT);
 }
 
 void SoccerTracker::draw_scheduled_mode_() {
@@ -887,20 +940,23 @@ void SoccerTracker::draw_in_progress_mode_() {
     this->draw_team_row_(16, this->current_match_.home_team, false, this->get_team_logo_(this->current_match_.home_team.name));
   }
   
-  // Draw score on right side
-  int score_x = this->display_->get_width() - 20;
+  // Draw score on right side, offset by 3px to align with team text
+  int score_x = this->display_->get_width();
+  int score_y = 3;  // Align with team text offset
   if (home_is_favorite) {
-    this->draw_score_(this->display_->get_width(), 0, 
+    this->draw_score_(score_x, score_y, 
                      this->current_match_.home_team.score,
                      this->current_match_.away_team.score);
   } else {
-    this->draw_score_(this->display_->get_width(), 0,
+    this->draw_score_(score_x, score_y,
                      this->current_match_.away_team.score,
                      this->current_match_.home_team.score);
   }
   
-  // Draw match time (MM:SS)
-  this->draw_time_in_match_(score_x - 25, 0, 
+  // Draw match time (MM:SS) centered vertically between the two scores
+  // Y position: centered between score_y and score_y+16, adjusted for font height
+  int time_y = score_y + 6;  // Center between top and bottom scores
+  this->draw_time_in_match_(score_x - 8, time_y, 
                            this->current_match_.minute,
                            this->current_match_.second, true);
 }
