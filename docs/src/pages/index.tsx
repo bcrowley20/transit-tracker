@@ -14,7 +14,7 @@ function HomepageHeader() {
       <div className="container">
         <div className={clsx(styles.heroCols)}>
           <div className="col">
-            <img src="img/transit-tracker.webp" />
+            <img src="img/info-display.webp" />
           </div>
           <div className="col">
             <Heading as="h1" className="hero__title">

@@ -171,123 +171,123 @@ web_server:
 
 # Import all team logos
 image:
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\atlanta-united-footballlogos-org_14x14.png"
+  - file: "C:\\Users\\bcrow\\info-display\\firmware\\logos\\teams_resized\\atlanta-united-footballlogos-org_14x14.png"
     id: atlanta_united_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\austin-fc-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\austin-fc-footballlogos-org_14x14.png"
     id: austin_fc_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\cf-montreal-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\cf-montreal-footballlogos-org_14x14.png"
     id: cf_montreal_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\charlotte-fc-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\charlotte-fc-footballlogos-org_14x14.png"
     id: charlotte_fc_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\chicago-fire-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\chicago-fire-footballlogos-org_14x14.png"
     id: chicago_fire_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\colorado-rapids-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\colorado-rapids-footballlogos-org_14x14.png"
     id: colorado_rapids_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\columbus-crew-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\columbus-crew-footballlogos-org_14x14.png"
     id: columbus_crew_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\dc-united-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\dc-united-footballlogos-org_14x14.png"
     id: dc_united_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\fc-cincinnati-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\fc-cincinnati-footballlogos-org_14x14.png"
     id: fc_cincinnati_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\fc-dallas-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\fc-dallas-footballlogos-org_14x14.png"
     id: fc_dallas_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\houston-dynamo-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\houston-dynamo-footballlogos-org_14x14.png"
     id: houston_dynamo_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\inter-miami-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\inter-miami-footballlogos-org_14x14.png"
     id: inter_miami_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\los-angeles-fc-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\los-angeles-fc-footballlogos-org_14x14.png"
     id: los_angeles_fc_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\los-angeles-galaxy-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\los-angeles-galaxy-footballlogos-org_14x14.png"
     id: los_angeles_galaxy_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\minnesota-united-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\minnesota-united-footballlogos-org_14x14.png"
     id: minnesota_united_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\nashville-sc-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\nashville-sc-footballlogos-org_14x14.png"
     id: nashville_sc_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\new-england-revolution-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\new-england-revolution-footballlogos-org_14x14.png"
     id: new_england_revolution_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\new-york-city-fc-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\new-york-city-fc-footballlogos-org_14x14.png"
     id: new_york_city_fc_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\new-york-red-bulls-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\new-york-red-bulls-footballlogos-org_14x14.png"
     id: new_york_red_bulls_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\orlando-city-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\orlando-city-footballlogos-org_14x14.png"
     id: orlando_city_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\philadelphia-union-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\philadelphia-union-footballlogos-org_14x14.png"
     id: philadelphia_union_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\portland-timbers-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\portland-timbers-footballlogos-org_14x14.png"
     id: portland_timbers_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\real-salt-lake-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\real-salt-lake-footballlogos-org_14x14.png"
     id: real_salt_lake_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\san-diego-fc-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\san-diego-fc-footballlogos-org_14x14.png"
     id: san_diego_fc_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\san-jose-earthquakes-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\san-jose-earthquakes-footballlogos-org_14x14.png"
     id: san_jose_earthquakes_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\seattle-sounders-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\seattle-sounders-footballlogos-org_14x14.png"
     id: seattle_sounders_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\sporting-kansas-city-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\sporting-kansas-city-footballlogos-org_14x14.png"
     id: sporting_kansas_city_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\st-louis-city-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\st-louis-city-footballlogos-org_14x14.png"
     id: st_louis_city_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\toronto-fc-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\toronto-fc-footballlogos-org_14x14.png"
     id: toronto_fc_logo
     type: RGB
     transparency: alpha_channel
-  - file: "C:\\Users\\bcrow\\transit-tracker\\firmware\\logos\\teams_resized\\vancouver-whitecaps-footballlogos-org_14x14.png"
+  - file: "C:\\\\Users\\\\bcrow\\\\info-display\\firmware\\logos\\teams_resized\\vancouver-whitecaps-footballlogos-org_14x14.png"
     id: vancouver_whitecaps_logo
     type: RGB
     transparency: alpha_channel

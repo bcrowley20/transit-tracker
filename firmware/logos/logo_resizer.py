@@ -2,10 +2,10 @@ from PIL import Image
 import os
 
 # Input folder with original logos
-input_folder = r"C:\Users\bcrow\transit-tracker\firmware\logos\teams"
+input_folder = r"C:\\Users\\bcrow\\info-display\firmware\logos\teams"
 
 # Output folder for resized logos
-output_folder = r"C:\Users\bcrow\transit-tracker\firmware\logos\m_resized"
+output_folder = r"C:\\Users\\bcrow\\info-display\firmware\logos\m_resized"
 os.makedirs(output_folder, exist_ok=True)
 
 # Target sizes

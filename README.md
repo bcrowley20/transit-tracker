@@ -1,3 +1,3 @@
-# Transit Tracker
+# Info Display
 
-Please see the complete documentation [here](https://eastsideurbanism.github.io/transit-tracker)!
+Please see the complete documentation [here](https://eastsideurbanism.github.io/info-display)!

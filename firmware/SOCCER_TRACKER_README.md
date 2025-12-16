@@ -257,7 +257,7 @@ This component follows the same license as the Transit Tracker project.
 - Built using [ESPHome](https://esphome.io/)
 - Data provided by [football-data.org](https://www.football-data.org/)
 - Team logos from FootballLogos.org
-- Inspired by the [Transit Tracker](https://github.com/EastsideUrbanism/transit-tracker) project
+- Inspired by the [Transit Tracker](https://github.com/EastsideUrbanism/info-display) project
 
 ## Support
 

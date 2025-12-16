@@ -8,14 +8,14 @@
       "chipFamily": "ESP32-S3",
       "parts": [
         {
-          "path": "https://transit-tracker.eastsideurbanism.org/firmware/firmware.factory.bin",
+          "path": "https://info-display.eastsideurbanism.org/firmware/firmware.factory.bin",
           "offset": 0
         }
       ],
       "ota": {
         "md5": "d1909f7c4c85e0466bfa4f65d5e13cc3",
-        "path": "https://transit-tracker.eastsideurbanism.org/firmware/firmware.ota.bin",
-        "release_url": "https://github.com/EastsideUrbanism/transit-tracker/releases/tag/v2.3.0"
+        "path": "https://info-display.eastsideurbanism.org/firmware/firmware.ota.bin",
+        "release_url": "https://github.com/EastsideUrbanism/info-display/releases/tag/v2.3.0"
       }
     }
   ]

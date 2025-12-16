@@ -48,7 +48,7 @@ ota:
 update:
   - platform: http_request
     name: Firmware Update
-    source: https://transit-tracker.eastsideurbanism.org/firmware/manifest.json
+    source: https://info-display.eastsideurbanism.org/firmware/manifest.json
 
 switch:
   - platform: template
